@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1553347753 source:c:\users\alumno\desktop\primerclase_repaso\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1553351388 source:c:\users\alumno\desktop\clase_repaso\primerclase_repaso\main.c
+	<stdio.h>
+	<stdlib.h>
+
