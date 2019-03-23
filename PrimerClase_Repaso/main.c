@@ -4,12 +4,16 @@
 //1er:
 
 int pedirNumero(void);
+float sacarPromedio(int suma, int cantidad);
 
 int main()
 {
     int elNumeroIngresado;
+    float promedio;
     elNumeroIngresado=pedirNumero();
     printf("El numero ingresado fue: %d",elNumeroIngresado);
+    promedio=sacarPromedio(94,5);
+    printf("El promedio ingresado fue: %f",promedio);
 
 
 
@@ -25,7 +29,7 @@ int pedirNumero()
 {
     int miNumero;
     //proceso
-    //miNumero>10
+    //miNumero=10
     do
         {
             printf("\nIngrese un numero: ");
@@ -35,4 +39,12 @@ int pedirNumero()
 
 
         return miNumero;
+}
+
+float sacarPromedio(int suma, int cantidad)
+{
+    float retorno;
+    retorno = (float)suma / cantidad;
+
+    return retorno;
 }
