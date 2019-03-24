@@ -11,79 +11,71 @@
  */
 
 
-float sacarPromedio(int suma, int cantidad);
-int sacarAprobados(int nota, int notaAprobados);
-int sacarNota(void);
+ float sacarPromedio(int suma, int cantidad);
+ int sacarAprobados(int notas);
+ int sacarNumero(void);
 
-int main()
-{
-    float promedioNoAprobados=0;
-    float promedioGeneral=0;
-    int cantidadNoAprobados=0;
-    int cantidadAprobados=0;
-    int sumaTotal=0;
-    int sumaNoAprobados=0;
-    int notaIngresada;
-    int i;
-    for(i=0; i<5; i++)
+ int main()
+ {
+     float promedioNoAprobados=0;
+     int cantidadNoAprobados=0;
+     int sumaNoAprobados=0;
+     float promedioGeneral=0;
+     int cantidadDeNotas=0;
+     int sumaTotal=0;
+     int cantidadAprobados=0;
+     int numeroIngresado;
+     int i;
+     for(i=0; i<5; i++)
         {
-            notaIngresada=sacarNota();
-            sumaTotal=sumaTotal+notaIngresada;
-            if(sacarAprobados(6,notaIngresada))
+            numeroIngresado=sacarNumero();
+            cantidadDeNotas++;
+            sumaTotal=sumaTotal+numeroIngresado;
+            if(sacarAprobados(numeroIngresado))
                 {
                     cantidadAprobados++;
                 }
-            else
+            promedioGeneral=sacarPromedio(sumaTotal,cantidadDeNotas);
+            if(numeroIngresado < 6)
                 {
-                    sumaNoAprobados=sumaNoAprobados+notaIngresada;
+                    sumaNoAprobados=sumaNoAprobados+numeroIngresado;
                     cantidadNoAprobados++;
+                    promedioNoAprobados=sacarPromedio(sumaNoAprobados,cantidadNoAprobados);
                 }
         }
-        promedioGeneral=sacarPromedio(sumaTotal,i);
-        promedioNoAprobados=sacarPromedio(sumaNoAprobados,cantidadNoAprobados);
-        printf("Cantidad de aprobados: %d\nPromedio de las notas en general: %f\nPromedio de no aprobados: %f\n",cantidadAprobados,promedioGeneral,promedioNoAprobados);
-
-
-
-
-
-
+    printf("Cantidad de alumnos aprobados: %d\nPromedio de todos los alumnos: %f\nPromedio de no aprobados: %f\n",cantidadAprobados,promedioGeneral,promedioNoAprobados);
 
 
     return 0;
-}
+ }
 
-int sacarNota()
-{
-    int miNota;
-    do
+ int sacarNumero()
+ {
+     int miNumero;
+     do
         {
             printf("Ingrese la nota: ");
-            scanf("%d",&miNota);
+            scanf("%d",&miNumero);
         }
-        while(miNota < 0 || miNota > 10);
+        while(miNumero < 0 || miNumero > 10);
 
-        return miNota;
-}
+    return miNumero;
+ }
 
-int sacarAprobados(int nota, int notaAprobados)
-{
-    int retorno;
-    if(notaAprobados >= nota)
+ int sacarAprobados(int notas)
+ {
+     int numeroDeAprobados=0;
+     if(notas >= 6)
         {
-            retorno=1;
+            numeroDeAprobados++;
         }
-    else
-        {
-            retorno=0;
-        }
+    return numeroDeAprobados;
+ }
 
-    return retorno;
-}
+ float sacarPromedio(int suma, int cantidad)
+ {
+     float promedio=0;
+     promedio= (float)suma/cantidad;
 
-float sacarPromedio(int suma, int cantidad)
-{
-    float miPromedio=0;
-    miPromedio= (float)suma/cantidad;
-    return miPromedio;
-}
+     return promedio;
+ }
