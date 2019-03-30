@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1553947711 source:c:\users\alumno\desktop\clase2_repaso\biblioteca.c
+	<stdio.h>
+	<stdlib.h>
+	"Biblioteca.h"
+
+1553947750 c:\users\alumno\desktop\clase2_repaso\biblioteca.h
+
+1553957028 source:c:\users\alumno\desktop\clase2_repaso\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionespuntero.h"
+
+1553956702 source:c:\users\alumno\desktop\clase2_repaso\funcionespuntero.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionespuntero.h"
+
+1553953665 c:\users\alumno\desktop\clase2_repaso\funcionespuntero.h
+
