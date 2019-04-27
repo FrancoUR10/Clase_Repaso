@@ -7,11 +7,15 @@
 int main()
 {
     eLocalidad localidades[TAM];
+    ePersona personas[TAM];
 
     cargarLocalidades(localidades,TAM);
 
     mostrarListadoLocalidades(localidades,TAM);
 
+    inicializarListado(personas,TAM);
+    cargarUnaPersona(personas,TAM);
+    mostrarPersona(personas,1);
 
 
 
@@ -29,5 +33,6 @@ int main()
 
     system("pause");
     system("cls");
+
     return 0;
 }
